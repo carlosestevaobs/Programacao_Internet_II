@@ -4,6 +4,7 @@ import Header from "../../Componentes/Header";
 import Menu from "../../Componentes/Menu";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { NameProvider} from "../../Contextos/NameContext";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -14,13 +15,16 @@ const ContentWrapper = styled.div`
 function Padrao() {
     return (
         <ContentWrapper>
-            <Header />
-            <Menu />
-            <Container>
-                <Outlet />
-            </Container>
-            <Footer />
+            <NameProvider>
+                <Header />
+                <Menu />
+                <Container>
+                    <Outlet />
+                </Container>
+                <Footer />
+            </NameProvider>
         </ContentWrapper>
     );
 }
+
 export default Padrao;
