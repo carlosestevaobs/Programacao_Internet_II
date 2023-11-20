@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 
-const textoOpcoes = ["Início", "Cursos", "Quem Somos", "Fale conosco"];
-const linksOpcoes = ["/", "/cursos", "/quem-somos", "/fale-conosco"];
+const textoOpcoes = ["Início", "Cursos", "Servidores", "Temperatura","Quem Somos","Fale conosco"];
+const linksOpcoes = ["/", "/cursos", "/servidores", "/temperatura", "/quem-somos","/fale-conosco"];
 
 const Opcoes = styled.ul`
     display: flex;
