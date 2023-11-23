@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Logo from "../Logo";
 
@@ -8,7 +9,6 @@ const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-around;
 `;
-
 
 const ContainerTextos = styled.div`
     display: flex;

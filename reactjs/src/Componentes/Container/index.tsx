@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import Sidebar from "../Sidebar";
 
@@ -12,7 +13,11 @@ const SidebarContainer = styled.div`
   width: 164px;
 `;
 
-function Container({children}) {
+interface ContainerProps {
+  children: ReactNode;
+}
+
+function Container({ children }: ContainerProps) {
   return (
     <MainContainer>
       <SidebarContainer>

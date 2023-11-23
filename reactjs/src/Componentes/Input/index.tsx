@@ -1,3 +1,4 @@
+import React from "react";
 import styled from 'styled-components';
 
 const InputContainer = styled.div`
@@ -21,7 +22,25 @@ const InputField = styled.input`
   border-radius: 10px;
 `;
 
-function Input ({ label, type = 'text', placeholder, obrigatorio = true, value, name, onChange }){
+interface InputProps {
+  label: string;
+  type?: string;
+  placeholder: string;
+  obrigatorio?: boolean;
+  value: string;
+  name: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+function Input({
+  label, 
+  type = 'text',
+  placeholder,
+  obrigatorio = true,
+  value,
+  name,
+  onChange,
+}: InputProps) {
   return (
   <InputContainer>
     <Label>{label}</Label>

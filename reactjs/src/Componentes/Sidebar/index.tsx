@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import MenuSidebar from "../MenuSidebar";
 
@@ -8,8 +9,13 @@ const DivSidebar = styled.div`
     flex-direction: column;
 `;
 
-function Sidebar() {
-    const menuItems = [
+interface MenuItem {
+    texto: string;
+    links: { nome: string; link: string }[];
+  }
+  
+  function Sidebar() {
+    const menuItems: MenuItem[] = [  
         {
             texto: "A INSTITUIÇÃO",
             links: [

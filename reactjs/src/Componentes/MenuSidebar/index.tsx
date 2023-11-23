@@ -1,3 +1,4 @@
+import React  from "react";
 import styled from "styled-components";
 
 const Titulo = styled.div`    
@@ -26,7 +27,17 @@ const Item = styled.li`
 	  }
 	`;
 
-function MenuSidebar({ texto, links }) {
+interface Link {
+    nome: string;
+    link: string;
+  }
+  
+  interface MenuProps {
+    texto: string;
+    links: Link[];
+  }
+  
+  function MenuSidebar({ texto, links }: MenuProps) {
     return (
         <>
             <Titulo>

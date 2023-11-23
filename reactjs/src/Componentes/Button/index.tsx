@@ -1,3 +1,5 @@
+import React from "react"
+import { ReactElement } from 'react'
 import styled from 'styled-components';
 
 const ButtonContainer = styled.button`
@@ -13,9 +15,16 @@ const ButtonContainer = styled.button`
     }
 `;
 
-function Button({ children, onClick }) {
+interface ButtonProps {
+    children: ReactElement | string;
+    onClick?: () => void;
+    type?: "button" | "submit" | "reset"; 
+}
+
+function Button({ children, onClick, type = "button" }: ButtonProps) {
     return (
-        <ButtonContainer onClick={onClick}>
+        <ButtonContainer onClick={onClick} type={type}>
+
             {children}
         </ButtonContainer>
     );

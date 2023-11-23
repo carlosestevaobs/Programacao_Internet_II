@@ -1,3 +1,4 @@
+import React  from "react";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,7 +19,11 @@ const Opcao = styled.li`
     height: 100%;
 `;
 
-const StyledLink = styled(Link)`
+interface StyledLinkProps {
+    destacado?: boolean;
+  }
+
+const StyledLink = styled(Link)<StyledLinkProps>`
 	  padding: 2px 20px;
 	  color: #fff;
 	  cursor: pointer;

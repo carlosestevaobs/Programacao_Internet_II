@@ -1,3 +1,4 @@
+import React from "react";
 import imgLogo from "./topo_ifpi_corrente.png";
 import styled from "styled-components";
 
