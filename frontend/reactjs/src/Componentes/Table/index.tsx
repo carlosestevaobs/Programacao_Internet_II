@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import ContainerForm from "../ContainerForm";
 
@@ -24,8 +25,13 @@ const Td = styled.td`
   padding: 6px 24px;
 `;
 
-function Table({ cabecalho, registros }) {
-  const renderizarLista = (dados) => {
+interface TableProps {
+  cabecalho: string[];
+  registros: { [key: string]: string }[];
+}
+
+const Table: React.FC<TableProps> = ({ cabecalho, registros }) => {
+  const renderizarLista = (dados: { [key: string]: string }) => {
     return Object.values(dados).map((dado) => <Td>{dado}</Td>);
   };
 

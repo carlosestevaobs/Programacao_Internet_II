@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -8,7 +8,11 @@ const Container = styled.div`
     box-shadow: 2px 2px 10px rgba(0, 66, 12, 0.4);
 `;
 
-function ContainerForm({ children }) {
+interface ContainerFormProps {
+    children: ReactNode;
+}
+
+function ContainerForm({ children }: ContainerFormProps) {
     return <Container>{children}</Container>;
 }
 

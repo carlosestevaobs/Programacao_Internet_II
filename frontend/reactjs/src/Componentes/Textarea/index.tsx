@@ -1,5 +1,6 @@
+import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import styled from "styled-components";
-import React, { useState } from "react";
+
 
 const TextareaContainer = styled.div`
   margin: 10px;
@@ -23,24 +24,32 @@ const TextareaField = styled.textarea`
   border-radius: 10px;
 `;
 
-function Textarea ({
-    label,
-    placeholder,
-    obrigatorio = true,
-    value,
-    name,
-    onChange
-  }) {
-    const [valorCampoTexto, setValorCampoTexto] = useState(value);
-  
-    const atualizarLabel = (evento) => {
-      const valor = evento.target.value;
-      if (valor.length <= 500) {
-        setValorCampoTexto(valor);
-        onChange(evento);
-      }
-    };
-  
+interface TextareaProps {
+  label: string;
+  placeholder: string;
+  obrigatorio?: boolean;
+  value: string;
+  name: string;
+  onChange: (evento: ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+function Textarea({
+  label,
+  placeholder,
+  obrigatorio = true,
+  value,
+  name,
+  onChange,
+}: TextareaProps) {
+  const [valorCampoTexto, setValorCampoTexto] = useState(value);
+
+  const atualizarLabel = (evento: KeyboardEvent<HTMLTextAreaElement>) => {
+    const valor = evento.currentTarget.value;
+    if (valor.length <= 500) {
+      setValorCampoTexto(valor);
+    }
+  };
+
     return (
       <TextareaContainer>
         <Label>{label}</Label>

@@ -1,19 +1,25 @@
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import Input from "../Input";
 import Textarea from "../Textarea";
 import Button from "../Button";
 import ContainerForm from "../ContainerForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
 
-function FormFaleConosco() {
-  const [user, setUser] = useState({
+interface User {
+  nome: string;
+  assunto: string;
+  mensagem: string;
+}
+
+const FormFaleConosco: React.FC = () => {
+  const [user, setUser] = useState<User>({
     nome: "",
     assunto: "",
     mensagem: "",
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setUser((prevState) => ({
       ...prevState,
@@ -21,7 +27,7 @@ function FormFaleConosco() {
     }));
   };
 
-  const confirmacao = (event) => {
+  const confirmacao = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setUser({
       nome: "",

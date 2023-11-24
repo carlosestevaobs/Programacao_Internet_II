@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -9,7 +9,11 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-function ContainerPagina({ children }) {
+interface ContainerPaginaProps {
+  children: ReactNode;
+}
+
+function ContainerPagina({ children }: ContainerPaginaProps) {
   return <Container>{children}</Container>;
 }
 
