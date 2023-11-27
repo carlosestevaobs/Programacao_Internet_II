@@ -19,8 +19,7 @@ export default function Login() {
       event.preventDefault();
   
       try {
-        const data = await AuthService.login(values);
-  
+        const data = await AuthService.login(values);  
         if (data) {
           if (data.errors) {
             console.error(data.errors);

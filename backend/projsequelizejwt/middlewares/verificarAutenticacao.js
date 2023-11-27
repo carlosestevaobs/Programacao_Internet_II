@@ -13,8 +13,8 @@ module.exports = async (req, res, next) => {
     try {
         verify(accessToken, jsonSecret.secret)
         const {id, email} = await decode(accessToken)
-        req.usuarioId = id
-        req.usuarioEmail = email
+        req.usuarioId = id       
+        req.usuarioEmail = email        
         return next()
     } catch(err) {
         res.status(401).send("Token não informado")
